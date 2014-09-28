@@ -1,16 +1,26 @@
 <%= render 'pages/home' unless user_signed_in? %>
 
-
-
+<div class="col-md-4 col-md-offset-4 center">
+  <%= link_to new_confession_path , class: "btn btn-success btn-block" do %>
+    <i class="fa fa-pencil"> New confession</i>
+  <% end %>
+</div>
+<br>
 <h1 class="center">Most recent confessions</h1>
 <div id="confessions" class="transitions-enabled">
 	<!-- This loops states one confession box -->
   <% @confessions.each do |confession| %>
     <%= link_to confession do  %>
         <div class="box panel panel-default">
-            <%= confession.description %>
-            <!-- this paragraph contains the voting count -->
-            <p> | <%= pluralize confession.reputation_for(:votes).to_i, "vote" %> </p>
+            <div class="panel-body">"
+              <%= confession.description %>
+              "
+            </div>
+            <div class="panel-footer">
+                 <i class="fa fa-trophy">
+                  <%= pluralize confession.reputation_for(:votes).to_i, "vote" %> 
+                </i>
+            </div>
         </div>
         
     <% end %>
@@ -18,9 +28,7 @@
 </div>
 
 
-<br>
-<!-- Links to new confession -->
-<%= link_to 'New Confession', new_confession_path , class: "btn btn-info" %>
+
 
 <!-- Bootstrap gem pagination -->
 <div class="center">

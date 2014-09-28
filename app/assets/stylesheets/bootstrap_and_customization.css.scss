@@ -11,11 +11,48 @@ $jumbotron-bg: white;
 @import 'bootstrap';
 @import "font-awesome";
 
-
+.container-fluid{
+	padding-left:0;
+	padding-right:0;
+}
 .center{
 	text-align: center;
 }
 
+.jumbotron{
+	height: 500px;
+	background-size: cover;
+	color: white;
+	background-image: image-url("bg.jpg");
+	padding-top: 3em;
+}
+
+.jumbotron h1{
+	margin-top: 2.5em;
+}
 .navbar-brand{
 	font-weight:bold;
+}
+
+.panel-default{
+	position: relative;
+}
+
+.box .panel-footer{
+position:absolute; 
+text-align: left;
+bottom:0;
+width: 100%;
+color: black;
+}
+
+.boxx .panel-footer{
+position:absolute; 
+text-align: left;
+bottom:0;
+width: 100%;
+}
+
+.colegial{
+	color: #4bae4f;
 }

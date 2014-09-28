@@ -1,4 +1,4 @@
-<%= form_for @confession, html: { multipart: true } do |f| %>
+<%= form_for @confession, html: { multipart: true, class: "col-md-4 col-md-offset-4 center" } do |f| %>
   <% if @confession.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@confession.errors.count, "error") %> prohibited this confession from being saved:</h2>
@@ -11,14 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+  <div class="form-group">
+<!--     <%= f.label :description %><br>
+ -->    <%= f.text_area :description, class:"form-control", rows: "8" %>
   </div>
 
 
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit %>    
   </div>
 <% end %>
