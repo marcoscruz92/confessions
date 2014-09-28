@@ -5,7 +5,7 @@
   # GET /confessions
   # GET /confessions.json
   def index
-    @confessions = Confession.all.order("created_at DESC")
+    @confessions = Confession.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
   end
 
   # GET /confessions/1
