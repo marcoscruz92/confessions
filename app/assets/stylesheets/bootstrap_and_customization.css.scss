@@ -1,15 +1,29 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 $body-bg: #ecf0f1;                                                
 $font-family-sans-serif: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $navbar-height: 45px;
 $navbar-default-bg: white;
 $navbar-default-brand-color:#c0392b;
+$navbar-inverse-link-color: white;
+$navbar-inverse-border-color: transparent;
+
 $brand-primary: #4bae4f;
 $jumbotron-bg: white;
 
 @import 'bootstrap';
 @import "font-awesome";
+
+h1{
+	font-family: Montserrat;
+	margin-top: 24px;
+	margin-bottom: 24px;
+}
+
+.cborder{
+  border-radius: 50px;
+}
 
 .container-fluid{
 	padding-left:0;
@@ -32,6 +46,7 @@ $jumbotron-bg: white;
 }
 .navbar-brand{
 	font-weight:bold;
+	color: white;
 }
 
 .panel-default{
@@ -45,6 +60,7 @@ bottom:0;
 width: 100%;
 color: black;
 }
+
 
 .boxx .panel-footer{
 position:absolute; 

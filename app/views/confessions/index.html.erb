@@ -1,12 +1,14 @@
 <%= render 'pages/home' unless user_signed_in? %>
+<br>
 
-<div class="col-md-4 col-md-offset-4 center">
-  <%= link_to new_confession_path , class: "btn btn-success btn-block" do %>
+<div class="col-md-2 col-md-offset-5 center">
+  <%= link_to new_confession_path , class: "btn btn-success btn-block cborder" do %>
     <i class="fa fa-pencil"> New confession</i>
   <% end %>
 </div>
 <br>
-<h1 class="center">Most recent confessions</h1>
+<br>
+<h1 class="center">Recent Confessions</h1>
 <div id="confessions" class="transitions-enabled">
 	<!-- This loops states one confession box -->
   <% @confessions.each do |confession| %>

@@ -2,33 +2,39 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 #confessions, #popular {
   margin: 0 auto;
 }
 
 .box {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   text-align: center;
-  font-style: italic;
   font-size: 20px;
   margin: 5px;
   width: 300px;
   height: 300px;
-  color: #fff;
-  background-color: #4bae4f;
+  color: #202020;
+  background-color: #fff2df;
+  -webkit-transition: -webkit-box-shadow ease-in 300ms;
 }
 
+.box:hover{
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
+}
 
+.box:active{
+  -webkit-transform: scale(0.98);
+  box-shadow: none;
+}
 
-.boxx{
-  font-family: 'Open Sans', sans-serif;
+.boxx {
+  font-family: 'Lato', sans-serif;
   text-align: center;
-  font-size: 26px;
-  margin: 5px;
-  width: 100%;
-  height: 400px;
-  color: black;
+  font-size: 24px;
+  margin: 10px;
+  height: 700px;
+  color: #202020;
+  background-color: #fff2df;
 }
 
 .box img {
@@ -38,6 +44,17 @@
 .description{
 	margin-left: 10px;
 	margin-top: 10px;
+}
+
+.navbar{
+  border-radius:0;
+  margin-bottom: 0;
+  color: white;
+  border:0;
+}
+
+.btn-info{
+  margin: 0 10px;
 }
 // .votes{
 // 	position: absolute;

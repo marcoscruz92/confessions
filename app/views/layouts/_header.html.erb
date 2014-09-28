@@ -7,9 +7,9 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <%= link_to  root_path, class: "navbar-brand" do %>
-      Confessions
+    <%= link_to root_path, class: "navbar-brand" do %>
       <span><i class="fa fa-paw colegial"></i></span> 
+      UPRM Confessions
     <% end %>
   </div>
 
@@ -20,12 +20,7 @@
       <li><%= link_to "About", about_path %></li> 
 
       <% if  user_signed_in? %>
-        <li> 
-          <%= link_to new_confession_path do %>
-            <i class="fa fa-plus">New Confession</i>
-          <% end %> 
-        </li>
-        <li> <%= link_to "Account Settings",  edit_user_registration_path %> </li>
+        <li> <%= link_to "Settings",  edit_user_registration_path %> </li>
         <li><%= link_to "Log out", destroy_user_session_path, method: :delete %> </li>
       <% else %>
         <li><%= link_to "Sign in", new_user_session_path %> </li>
