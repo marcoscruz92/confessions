@@ -18,6 +18,7 @@ gem 'will_paginate', '~> 3.0.5'
 gem 'will_paginate-bootstrap'
 gem 'font-awesome-sass'
 gem 'mysql2', '~> 0.3.16'
+gem 'activerecord-reputation-system', github: 'NARKOZ/activerecord-reputation-system', branch: 'rails4'
 
 
 group :development, :test do

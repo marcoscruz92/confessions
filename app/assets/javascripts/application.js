@@ -17,3 +17,10 @@
 //= require turbolinks
 //= require masonry/jquery.masonry
 //= require_tree .
+
+
+$(function() {
+  setTimeout(function(){
+    $('.alert').slideUp(500);
+  }, 1000);
+});

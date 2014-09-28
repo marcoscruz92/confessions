@@ -4,4 +4,6 @@ class Confession < ActiveRecord::Base
     validates_attachment :image, content_type: { content_type: /\Aimage\/.*\Z/ }
     validates :description, presence: true
 
+    has_reputation :votes, source: :user,  aggregated_by: :sum
+
 end

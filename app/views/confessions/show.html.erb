@@ -1,9 +1,10 @@
 
-
+<!-- This p is needed for rails alerts -->
 <p id="notice"><%= notice %></p>
 <%= link_to 'Back', confessions_path, class: "btn btn-info" %>
 
 <div class="row">
+	<!-- Div that contains description of the confession -->
 	<div class="col-md-offset-2 col-md-8">
 		<div class="panel panel-default">
 			<p>
@@ -11,11 +12,19 @@
 			  <%= @confession.description %>
 			</p>
 		</div>
+		<!-- Div that contains the voting system of the confessions -->
+		<div class="panel-body">
+			| <%= pluralize @confession.reputation_for(:votes).to_i, "vote" %>
+			| <%= link_to "Like", vote_confession_path(@confession, type: "up") , method: "post" %>
+			| <%= link_to "Dislike", vote_confession_path(@confession, type: "down") , method: "post" %>
+		</div>
 	</div>
 </div>
 
+<!-- Link to go back to all confessions site -->
 <%= link_to 'Back', confessions_path, class: "btn btn-info" %>
 
+<!-- Link to delete app -->
 <% if @confession.user == current_user %>
 	<%= link_to  @confession, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } do %>
 		<i class="fa fa-trash">Delete</i>

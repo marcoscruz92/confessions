@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :confessions
+  resources :confessions do
+    member { post :vote}
+  end
 
   devise_for :users
   root  "confessions#index"

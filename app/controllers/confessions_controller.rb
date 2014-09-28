@@ -6,11 +6,20 @@
   # GET /confessions.json
   def index
     @confessions = Confession.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
+    @p_confessions = Confession.find_with_reputation(:votes, :all, order: "votes desc")
   end
 
   # GET /confessions/1
   # GET /confessions/1.json
   def show
+    @confession = Confession.find(params[:id])
+  end
+
+  def vote
+    value = params[:type]  == "up" ? 1 : 0
+    @confession = Confession.find(params[:id])
+    @confession.add_or_update_evaluation(:votes, value, current_user )
+    redirect_to @confession
   end
 
   # GET /confessions/new
@@ -60,6 +69,8 @@
       format.json { head :no_content }
     end
   end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

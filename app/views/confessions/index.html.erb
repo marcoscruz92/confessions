@@ -1,21 +1,25 @@
 <%= render 'pages/home' unless user_signed_in? %>
 
-<h1>Listing confessions</h1>
 
 
+<h1 class="center">Most recent confessions</h1>
 <div id="confessions" class="transitions-enabled">
+	<!-- This loops states one confession box -->
   <% @confessions.each do |confession| %>
     <%= link_to confession do  %>
         <div class="box panel panel-default">
             <%= confession.description %>
+            <!-- this paragraph contains the voting count -->
+            <p> | <%= pluralize confession.reputation_for(:votes).to_i, "vote" %> </p>
         </div>
+        
     <% end %>
   <% end %>
 </div>
 
 
 <br>
-
+<!-- Links to new confession -->
 <%= link_to 'New Confession', new_confession_path , class: "btn btn-info" %>
 
 <!-- Bootstrap gem pagination -->

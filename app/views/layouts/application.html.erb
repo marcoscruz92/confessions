@@ -17,6 +17,7 @@
 
 
 <div class="container">
+  <!-- needed to display alerts -->
 	<% flash.each do |name, msg| %>
 	     <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
 	<% end %>
