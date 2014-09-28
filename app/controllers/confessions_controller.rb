@@ -5,7 +5,7 @@
   # GET /confessions
   # GET /confessions.json
   def index
-    @confessions = Confession.all
+    @confessions = Confession.all.order("created_at DESC")
   end
 
   # GET /confessions/1
