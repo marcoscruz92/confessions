@@ -1,27 +1,19 @@
 <h1>Listing confessions</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Confession</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @confessions.each do |confession| %>
-      <tr>
-        <td><%= image_tag confession.image.url(:medium) %></td>
-        <td><%= confession.description %></td>
-        <td><%= link_to 'Show', confession %></td>
-        <% if confession.user == current_user %>
-          <td><%= link_to 'Edit', edit_confession_path(confession) %></td>
-          <td><%= link_to 'Destroy', confession, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div id="confessions" class="transitions-enabled">
+  <% @confessions.each do |confession| %>
+    <div class="box panel panel-default">
+      <%= confession.description %>
+      <%= link_to 'Show', confession %>
+      <% if confession.user == current_user %>
+        <%= link_to 'Edit', edit_confession_path(confession) %>
+        <%= link_to 'Destroy', confession, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
 
 <br>
 

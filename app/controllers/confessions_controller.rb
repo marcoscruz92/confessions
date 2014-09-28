@@ -74,6 +74,6 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def confession_params
-      params.require(:confession).permit(:description, :image)
+      params.require(:confession).permit(:description)
     end
 end
