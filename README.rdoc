@@ -1,7 +1,7 @@
 == README
 
+Confessions UPRM is based of the popular facebook website from The University of Puerto Rico
+Mayagüez campus. Through this app a lot of people had identified with others confessions.
 
-
-
-
-[ ![Codeship Status for marcoscruz92/confessions](https://www.codeship.io/projects/ed4da280-2901-0132-0d7b-72f84374274a/status)](https://www.codeship.io/projects/38018)
+This app was built in the HackPR 24 hour marathon. and is going to be an ongoin development the next
+couple of months and using the Ruby on Rails framework
