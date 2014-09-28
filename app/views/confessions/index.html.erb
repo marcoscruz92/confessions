@@ -1,16 +1,15 @@
+<%= render 'pages/home' unless user_signed_in? %>
+
 <h1>Listing confessions</h1>
 
 
 <div id="confessions" class="transitions-enabled">
   <% @confessions.each do |confession| %>
-    <div class="box panel panel-default">
-      <%= confession.description %>
-      <%= link_to 'Show', confession %>
-      <% if confession.user == current_user %>
-        <%= link_to 'Edit', edit_confession_path(confession) %>
-        <%= link_to 'Destroy', confession, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-    </div>
+    <%= link_to confession do  %>
+        <div class="box panel panel-default">
+            <%= confession.description %>
+        </div>
+    <% end %>
   <% end %>
 </div>
 
