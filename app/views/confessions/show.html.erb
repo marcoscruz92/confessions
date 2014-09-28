@@ -1,9 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag @confession.image.url(:medium) %>
+
 <p>
   <strong>Description:</strong>
   <%= @confession.description %>
 </p>
-
-<%= link_to 'Edit', edit_confession_path(@confession) %> |
+<% if @confession.user == current_user %>
+	<%= link_to 'Edit', edit_confession_path(@confession) %> |
+<% end %>
 <%= link_to 'Back', confessions_path %>

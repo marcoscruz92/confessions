@@ -1,4 +1,5 @@
-class ConfessionsController < ApplicationController
+  class ConfessionsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_confession, only: [:show, :edit, :update, :destroy]
 
   # GET /confessions
@@ -14,7 +15,7 @@ class ConfessionsController < ApplicationController
 
   # GET /confessions/new
   def new
-    @confession = Confession.new
+    @confession = current_user.confessions.build
   end
 
   # GET /confessions/1/edit
@@ -24,8 +25,7 @@ class ConfessionsController < ApplicationController
   # POST /confessions
   # POST /confessions.json
   def create
-    @confession = Confession.new(confession_params)
-
+    @confession = current_user.confessions.build(confession_params)
     respond_to do |format|
       if @confession.save
         format.html { redirect_to @confession, notice: 'Confession was successfully created.' }
@@ -67,8 +67,13 @@ class ConfessionsController < ApplicationController
       @confession = Confession.find(params[:id])
     end
 
+    def correct_user
+      @confession = current_user.confessions.find_by(id: params[:id])
+      redirect_to confessions_path, notice: "Not authorized to edit this pin" if @confession.nil?
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def confession_params
-      params.require(:confession).permit(:description)
+      params.require(:confession).permit(:description, :image)
     end
 end
