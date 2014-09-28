@@ -30,13 +30,11 @@
 </div>
 <span class='st_facebook_hcount' displayText='Facebook'></span>
 
+<%= link_to  @confession, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } do %>
+		<i class="fa fa-trash">Delete</i>
 
 
 <!-- Link to delete app -->
-<% if @confession.user == current_user %>
-	<%= link_to  @confession, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } do %>
-		<i class="fa fa-trash">Delete</i>
-	<% end %>
-<% end %>
+
 
 

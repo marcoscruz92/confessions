@@ -4,4 +4,4 @@ Confessions UPRM is based of the popular facebook website from The University of
 Mayagüez campus. Through this app a lot of people had identified with others confessions.
 
 This app was built in the HackPR 24 hour marathon. and is going to be an ongoin development the next
-couple of months and using the Ruby on Rails framework
+couple of months and using the Ruby on Rails framework.
