@@ -16,8 +16,9 @@
 
 <br>
 
-<%= link_to 'New Confession', new_confession_path %>
+<%= link_to 'New Confession', new_confession_path , class: "btn btn-info" %>
 
+<!-- Bootstrap gem pagination -->
 <div class="center">
    <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
 </div>
